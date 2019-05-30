@@ -196,3 +196,16 @@ header {
 	padding: 15px;
 	border: #ccc 1px solid;
 }
+
+.navbar-nav a {
+	/* color: #fff; */
+}
+
+.navbar-nav a:hover {
+	color: #666 !important;
+}
+
+.post-thumb img {
+	width: 100%;
+	height: auto;
+}

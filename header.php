@@ -29,7 +29,19 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'depth' => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                        'container' => 'div',
+                        'container_class' => 'collapse navbar-collapse',
+                        'container_id' => 'navbarCollapse',
+                        'menu_class' => 'navbar-nav mr-auto',
+                        'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker' => new WP_Bootstrap_Navwalker(),
+                    ) );
+                ?>
+                <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -41,7 +53,7 @@
                             <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
